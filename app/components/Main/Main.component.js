@@ -20,6 +20,7 @@ var MainComponent = (function () {
             _this.username = user.name;
             _this.avatar = user.avatar_url;
             _this.html_url = user.html_url;
+            _this.user = user;
             console.log(user);
         });
     }

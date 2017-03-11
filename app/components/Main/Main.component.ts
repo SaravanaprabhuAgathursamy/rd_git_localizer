@@ -12,12 +12,14 @@ export class MainComponent {
     username: string;
     avatar: string;
     html_url: string;
+    user: any;
 
     constructor(private _githubService: GithubService) {
       this._githubService.getUser().subscribe(user => {
         this.username = user.name;
         this.avatar = user.avatar_url;
         this.html_url = user.html_url;
+        this.user = user;
         console.log(user);
       })
     }
