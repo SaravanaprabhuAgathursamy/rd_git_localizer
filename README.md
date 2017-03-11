@@ -17,7 +17,7 @@ This is a simple Angular 2 project combined with Express. Based on search criter
 
 <strong>Technologies Used:</strong>
 </br>
-TypeScript, ThirdPartyApi, Express, Angular2, HTML, CSS, Heroku.
+TypeScript, ThirdPartyApi, Express, Angular2, HTML, CSS, Bootstrap, Heroku.
 
 <strong>YouTube:</strong>
 
