@@ -14,15 +14,19 @@ var github_service_1 = require("../../services/github.service");
 require("rxjs/add/operator/map");
 var MainComponent = (function () {
     function MainComponent(_githubService) {
-        var _this = this;
         this._githubService = _githubService;
-        this._githubService.getUser().subscribe(function (user) {
-            _this.username = user.name;
-            _this.avatar = user.avatar_url;
-            _this.html_url = user.html_url;
-            console.log(user);
-        });
+        this.user = false;
     }
+    MainComponent.prototype.searchUser = function () {
+        var _this = this;
+        this._githubService.updateUser(this.username);
+        this._githubService.getUser().subscribe(function (user) {
+            _this.user = user;
+        });
+        this._githubService.getRepos().subscribe(function (repos) {
+            _this.repos = repos;
+        });
+    };
     return MainComponent;
 }());
 MainComponent = __decorate([

@@ -9,16 +9,25 @@ import 'rxjs/add/operator/map';
     styleUrls: ['components/Main/Main.component.css']
 })
 export class MainComponent {
+    user: any;
+    repos: any;
     username: string;
-    avatar: string;
-    html_url: string;
 
     constructor(private _githubService: GithubService) {
-      this._githubService.getUser().subscribe(user => {
-        this.username = user.name;
-        this.avatar = user.avatar_url;
-        this.html_url = user.html_url;
-        console.log(user);
-      })
+      this.user = false;
     }
+
+    searchUser(){
+      this._githubService.updateUser(this.username);
+
+      this._githubService.getUser().subscribe(user => {
+        this.user = user;
+      })
+      this._githubService.getRepos().subscribe(repos => {
+        this.repos = repos;
+      })
+
+    }
+
+
 }
