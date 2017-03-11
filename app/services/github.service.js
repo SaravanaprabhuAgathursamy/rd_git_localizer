@@ -22,11 +22,11 @@ var GithubService = (function () {
         this.username = "";
     }
     GithubService.prototype.getUser = function () {
-        return this._http.get('http://api.github.com/users/' + this.username + '?client_id=' + this.clientID + '&client_secret=' + this.clientSecret)
+        return this._http.get('https://api.github.com/users/' + this.username + '?client_id=' + this.clientID + '&client_secret=' + this.clientSecret)
             .map(function (res) { return res.json(); });
     };
     GithubService.prototype.getRepos = function () {
-        return this._http.get('http://api.github.com/users/' + this.username + '/repos?client_id=' + this.clientID + '&client_secret=' + this.clientSecret)
+        return this._http.get('https://api.github.com/users/' + this.username + '/repos?client_id=' + this.clientID + '&client_secret=' + this.clientSecret)
             .map(function (res) { return res.json(); });
     };
     GithubService.prototype.updateUser = function (username) {
