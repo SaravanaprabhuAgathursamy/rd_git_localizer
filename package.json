@@ -4,6 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
+    "build": "node bin/bundler.js --prod",
+    "local": "nodemon ./bin/www",
     "start": "concurrently \"tsc -w\" \"nodemon ./bin/www\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
