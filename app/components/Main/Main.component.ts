@@ -22,4 +22,8 @@ export class MainComponent {
         console.log(repos);
       })
     }
+
+    searchUser(){
+      console.log("Hello World!")
+    }
 }

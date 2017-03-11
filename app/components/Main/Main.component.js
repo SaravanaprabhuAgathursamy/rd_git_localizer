@@ -25,6 +25,9 @@ var MainComponent = (function () {
             console.log(repos);
         });
     }
+    MainComponent.prototype.searchUser = function () {
+        console.log("Hello World!");
+    };
     return MainComponent;
 }());
 MainComponent = __decorate([
