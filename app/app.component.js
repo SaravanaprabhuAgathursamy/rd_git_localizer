@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var github_service_1 = require("./services/github.service");
 var AppComponent = (function () {
     function AppComponent() {
     }
@@ -18,7 +19,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n      <router-outlet></router-outlet>\n    "
+        template: "\n      <main></main>\n      <router-outlet></router-outlet>\n    ",
+        providers: [github_service_1.GithubService]
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);

@@ -10,24 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var github_service_1 = require("../../services/github.service");
+var http_1 = require("@angular/http");
+// Map observable resopnse
 require("rxjs/add/operator/map");
-var MainComponent = (function () {
-    function MainComponent(_githubService) {
-        this._githubService = _githubService;
-        this._githubService.getUser().subscribe(function (user) {
-            console.log(user);
-        });
+var GithubService = (function () {
+    function GithubService(_http) {
+        this._http = _http;
+        console.log('GitHub Service Ready');
+        this.username = "rootgateway";
     }
-    return MainComponent;
+    GithubService.prototype.getUser = function () {
+        return this._http.get('http://api.github.com/users/' + this.username).map(function (res) { return res.json(); });
+    };
+    return GithubService;
 }());
-MainComponent = __decorate([
-    core_1.Component({
-        selector: 'main',
-        templateUrl: 'components/Main/Main.component.html',
-        styleUrls: ['components/Main/Main.component.css']
-    }),
-    __metadata("design:paramtypes", [github_service_1.GithubService])
-], MainComponent);
-exports.MainComponent = MainComponent;
-//# sourceMappingURL=Main.component.js.map
+GithubService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], GithubService);
+exports.GithubService = GithubService;
+//# sourceMappingURL=github.service.js.map
