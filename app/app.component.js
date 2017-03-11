@@ -19,7 +19,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n      <main></main>\n      <router-outlet></router-outlet>\n    ",
+        template: "\n      <router-outlet></router-outlet>\n    ",
         providers: [github_service_1.GithubService]
     }),
     __metadata("design:paramtypes", [])
