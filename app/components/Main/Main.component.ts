@@ -11,19 +11,23 @@ import 'rxjs/add/operator/map';
 export class MainComponent {
     user: any;
     repos: any;
+    username: string;
 
     constructor(private _githubService: GithubService) {
-      this._githubService.getUser().subscribe(user => {
-        this.user = user;
-        console.log(user);
-      })
-      this._githubService.getRepos().subscribe(repos => {
-        this.repos = repos;
-        console.log(repos);
-      })
+      this.user = false;
     }
 
     searchUser(){
-      console.log("Hello World!")
+      this._githubService.updateUser(this.username);
+
+      this._githubService.getUser().subscribe(user => {
+        this.user = user;
+      })
+      this._githubService.getRepos().subscribe(repos => {
+        this.repos = repos;
+      })
+
     }
+
+
 }

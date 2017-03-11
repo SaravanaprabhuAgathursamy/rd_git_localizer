@@ -16,14 +16,21 @@ require("rxjs/add/operator/map");
 var GithubService = (function () {
     function GithubService(_http) {
         this._http = _http;
+        this.clientID = "9fbe29042faa415eb297";
+        this.clientSecret = "394fecbaf029a516adbd4cc6ee783f602a08b01c";
         console.log('GitHub Service Ready');
-        this.username = "rootgateway";
+        this.username = "";
     }
     GithubService.prototype.getUser = function () {
-        return this._http.get('http://api.github.com/users/' + this.username).map(function (res) { return res.json(); });
+        return this._http.get('http://api.github.com/users/' + this.username + '?client_id=' + this.clientID + '&client_secret=' + this.clientSecret)
+            .map(function (res) { return res.json(); });
     };
     GithubService.prototype.getRepos = function () {
-        return this._http.get('http://api.github.com/users/' + this.username + '/repos').map(function (res) { return res.json(); });
+        return this._http.get('http://api.github.com/users/' + this.username + '/repos?client_id=' + this.clientID + '&client_secret=' + this.clientSecret)
+            .map(function (res) { return res.json(); });
+    };
+    GithubService.prototype.updateUser = function (username) {
+        this.username = username;
     };
     return GithubService;
 }());
