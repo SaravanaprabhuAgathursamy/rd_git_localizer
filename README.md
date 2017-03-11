@@ -21,4 +21,4 @@ TypeScript, ThirdPartyApi, Express, Angular2, HTML, CSS, Bootstrap, Heroku.
 
 <strong>YouTube:</strong>
 
-<strong>Deployed Link:</strong>
+<strong>Deployed Link:</strong> <a href="https://rd-git-localizer.herokuapp.com">https://rd-git-localizer.herokuapp.com</a>
