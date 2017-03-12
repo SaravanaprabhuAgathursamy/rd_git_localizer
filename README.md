@@ -19,6 +19,6 @@ This is a simple Angular 2 project combined with Express. Based on search criter
 </br>
 TypeScript, ThirdPartyApi, Express, Angular2, HTML, CSS, Bootstrap, Heroku.
 
-<strong>YouTube:</strong>
+<strong>YouTube:</strong> <a href="http://www.youtube.com/watch?v=QsV45g9mrC8">http://www.youtube.com/watch?v=QsV45g9mrC8</a>
 
 <strong>Deployed Link:</strong> <a href="https://rd-git-localizer.herokuapp.com">https://rd-git-localizer.herokuapp.com</a>
